@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import './App.css';
 import Select from 'react-select';
 import Selected from "./Selected";
+import DataLoad from "./DataLoad";
+
 
 
 const testData = [
@@ -43,22 +45,29 @@ function App() {
 
   const options = testData.map(entry => ({ label: entry.category, value: entry.category }));
 
+
   useEffect(() => {
 
     let selectMenu = document.getElementById("menu").innerText
+    console.log(selectMenu);
     if (!selectMenu === "Select...") {
+      console.log(selectMenu)
       setData(selectMenu);
     }
     return () => null
   })
 
 
+
   return (
+
     <div className="container">
       <h1 className="text-center mt-3 my-5">Welcome to Foodie Club</h1>
       <Select options={options} id="menu" onChange={(e) => setData(e.label)} />
-      {data && <Selected testData={testData} selected={data} />}
-    </div>
+      {
+      (!data ?  <DataLoad testData={testData}/> : <Selected testData={testData} selected={data}/>) 
+      }
+    </div> 
   );
 }
 
