@@ -5,7 +5,7 @@ function Selected({ testData, selected }) {
     let filterData;
 
     const filter = () => {
-        // if (filterData)
+        if (filterData)
         //     console.log(filterData);
             setInStock(filterData)
     }
