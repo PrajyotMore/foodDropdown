@@ -16,15 +16,14 @@ function DataLoad({testData}) {
              {
                  data.map((value,index)=> {
                      return <div key={index}>
-                                <h1 className="text-center">{value.category}</h1>
-                                <div className="text-center p-5">
-                                <div> {value.items[0].name} {value.items[0].price}</div>
-                                <div> {value.items[1].name} {value.items[1].price}</div>
-                                <div> {value.items[2].name} {value.items[2].price}</div>
-                                <div> {value.items[3].name} {value.items[3].price}</div>
-
+                                <div className="text-center p-2 text-white border border-dark bg-secondary">{value.category}</div>
+                                <div className= "card-body text-center text-black mb-5 border border-dark">
+                                    <div> <strong className="fw-normal p-3">{value.items[0].name}</strong>  <strong className="pl-3">{value.items[0].price}</strong></div>
+                                    <div> <strong className="fw-normal p-3">{value.items[1].name}</strong>  <strong className="pl-3">{value.items[1].price}</strong></div>
+                                    <div> <strong className="fw-normal p-3">{value.items[2].name}</strong>  <strong className="pl-3">{value.items[2].price}</strong></div>
+                                    <div> <strong className="fw-normal p-3">{value.items[3].name}</strong>  <strong className="pl-3">{value.items[3].price}</strong></div>
+                                </div>
                             </div>
-                           </div>
                  })
              }       
          </div>
