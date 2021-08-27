@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Selected({ testData, selected }) {
     const [inStock, setInStock] = React.useState(null)
     let filterData;
 
     const filter = () => {
-        if (filterData)
+        // if (filterData)
+        //     console.log(filterData);
             setInStock(filterData)
     }
 
     React.useEffect(() => {
         testData.forEach((value) => {
+            console.log(value)
             if (value.category === selected) {
-                filterData = value.items.filter((data) => data.inStock === true);
+                filterData = value.items.filter((data) => 
+                data.inStock === true
+                );
             }
         })
 
     }, [selected])
+
 
     return (
         <div>
