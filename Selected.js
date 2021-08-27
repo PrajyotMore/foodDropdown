@@ -2,13 +2,21 @@ import React, { useEffect } from 'react'
 
 function Selected({ testData, selected }) {
     const [inStock, setInStock] = React.useState(null)
+    // const[item,setItem] = React.useState([]);
+
     let filterData;
 
     const filter = () => {
         if (filterData)
-        //     console.log(filterData);
+            console.log(filterData);
             setInStock(filterData)
     }
+
+
+    // useEffect(()=> {
+    //     setItem();
+    // },[selected])
+
 
     React.useEffect(() => {
         testData.forEach((value) => {
@@ -31,14 +39,19 @@ function Selected({ testData, selected }) {
                     Show items only inStock items
                 </label>
             </div>
-            {inStock && inStock.map((data, index) => {
-                return <>
-                    <div key={index}>
-                        <div>  Name:{data.name} Price:{data.price}</div>
-                    </div>
-                </>
-            })}
-        </div>
+            {
+                (inStock && inStock.map((data, index) => {
+                            return <>
+                                <div key={index} className="card text-white bg-secondary">
+                                <div className= "card-body ">
+                                    <div> <strong className="fs-2 fw-normal">{data.name}</strong>  <strong className="pl-3">{data.price}</strong></div>
+                                </div>
+                                </div>
+                            </>
+                    })) 
+            }
+            </div>
+        
     )
 }
 
