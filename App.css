@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
 }
+
+body{
+  background-color: #b5c7f5;
+}
+
 .App {
-  text-align: center;
+/*   text-align: center; */
 }
 
 .App-logo {
