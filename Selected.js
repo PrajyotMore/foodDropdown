@@ -42,7 +42,7 @@ function Selected({ testData, selected }) {
             {
                 (inStock && inStock.map((data, index) => {
                             return <>
-                                <div key={index} className="card text-white bg-secondary">
+                                <div key={index} className="card text-black bg-secondary">
                                 <div className= "card-body ">
                                     <div> <strong className="fs-2 fw-normal">{data.name}</strong>  <strong className="pl-3">{data.price}</strong></div>
                                 </div>
